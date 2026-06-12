@@ -1,0 +1,6 @@
+<select #statusSelect (change)="updateStatus(book, statusSelect.value)">
+  <option value="WantToRead">Want to Read</option>
+  <option value="Reading">Reading</option>
+  <option value="Completed">Completed</option>
+  <option value="DidNotFinish">Did Not Finish</option>
+</select>

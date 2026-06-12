@@ -1,0 +1,13 @@
+@for (book of books; track book.id) {
+  <div class="book-information">
+    <p>Title: {{ book.title }}</p>
+    <p>Author: {{ book.author }}</p>
+    <p>
+      Status: {{ statusDisplay[book.status] }}
+      <drop-drown-status
+        [book]="book"
+        (statusChanged)="onStatusChanged($event)"
+      ></drop-drown-status>
+    </p>
+  </div>
+}

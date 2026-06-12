@@ -1,0 +1,8 @@
+.book-information {
+    margin: 4px;
+    border: 2px solid black;
+    border-radius:  12px;
+    background-color: pink;
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
