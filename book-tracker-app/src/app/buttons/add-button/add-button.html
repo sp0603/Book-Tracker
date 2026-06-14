@@ -1,5 +1,5 @@
 <style>
- button {
+  .general-add-button {
     background-color: pink;
     border: none;
     border-radius: 50%;
@@ -8,8 +8,112 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    
- }
-</style>
+  }
 
-<button> Add Book </button>
+  .close-button {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+  }
+
+  .submit-button {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    border: 2px solid black;
+    background: rgb(204, 135, 147);
+    z-index: 20;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .form-row > label {
+    font-weight: bold;
+  }
+
+  .form-row input[type='text'] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .status {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  .hide-legend {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+</style>
+<button (click)="showPopUp('popup')" class="general-add-button">Add Book</button>
+
+<div class="popup" id="popup">
+  <form class="pop-up-form">
+    <div class="form-row">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required />
+    </div>
+
+    <div class="form-row">
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required />
+    </div>
+
+    <div class="form-row">
+      <label>Status:</label>
+
+      <fieldset class="status">
+        <legend class="hide-legend">Status</legend>
+
+        <div>
+          <input type="radio" id="want" name="status" value="WantToRead" required />
+          <label for="want">Want to Read</label>
+        </div>
+
+        <div>
+          <input type="radio" id="reading" name="status" value="Reading" />
+          <label for="reading">Reading</label>
+        </div>
+
+        <div>
+          <input type="radio" id="completed" name="status" value="Completed" />
+          <label for="completed">Completed</label>
+        </div>
+
+        <div>
+          <input type="radio" id="dnf" name="status" value="DidNotFinish" />
+          <label for="dnf">Did Not Finish</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" class="submit-button">Add</button>
+      <button type="button" (click)="hidePopUp('popup')" class="close-button">X</button>
+    </div>
+  </form>
+</div>

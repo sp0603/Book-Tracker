@@ -8,5 +8,18 @@ import { Component } from "@angular/core";
 })
 
 export class AddButtonComponent{
-    
+
+    showPopUp(id: string): void {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.display = 'block';
+        }
+    }
+
+    hidePopUp(id: string): void {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.display = 'none';
+        }
+    }
 }
