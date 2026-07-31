@@ -34,3 +34,4 @@
 /Users/sydneyporter/BookTracker/BookTracker.Api/obj/Debug/net10.0/BookTracker.Api.pdb
 /Users/sydneyporter/BookTracker/BookTracker.Api/obj/Debug/net10.0/BookTracker.Api.genruntimeconfig.cache
 /Users/sydneyporter/BookTracker/BookTracker.Api/obj/Debug/net10.0/ref/BookTracker.Api.dll
+/Users/sydneyporter/BookTracker/BookTracker.Api/obj/Debug/net10.0/BookTracker.Api.sourcelink.json

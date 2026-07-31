@@ -22,4 +22,16 @@ export class BookService {
       {}
     );
   }
+
+  // Omitting the id because post generates it for us
+  addBook(book: Omit<Book, 'id'>): Observable<Book> {
+    return this.http.post<Book>(`${this.apiUrl}/`, book);
+  }
+
+  // addBook(book: Book): Observable<Book> {
+  //   return this.http.post<Book>(
+  //     `${this.apiUrl}/`,
+  //     {}
+  //   );
+  // }
 }

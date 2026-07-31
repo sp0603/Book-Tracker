@@ -69,18 +69,25 @@
     margin-top: 20px;
   }
 </style>
+
+
 <button (click)="showPopUp('popup')" class="general-add-button">Add Book</button>
 
 <div class="popup" id="popup">
-  <form class="pop-up-form">
+  <form class="pop-up-form" (ngSubmit)="addBook()">
     <div class="form-row">
       <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required />
+      <input 
+      type="text" 
+      id="title" 
+      name="title" 
+      [(ngModel)] = "newBook.title"
+      required />
     </div>
 
     <div class="form-row">
       <label for="author">Author:</label>
-      <input type="text" id="author" name="author" required />
+      <input type="text" id="author" name="author" [(ngModel)] = "newBook.author" required />
     </div>
 
     <div class="form-row">
@@ -90,22 +97,22 @@
         <legend class="hide-legend">Status</legend>
 
         <div>
-          <input type="radio" id="want" name="status" value="WantToRead" required />
+          <input type="radio" id="want" name="status" [value]="BookStatus.WantToRead" [(ngModel)] = "newBook.status" required />
           <label for="want">Want to Read</label>
         </div>
 
         <div>
-          <input type="radio" id="reading" name="status" value="Reading" />
+          <input type="radio" id="reading" name="status" [value]="BookStatus.Reading" [(ngModel)] = "newBook.status" />
           <label for="reading">Reading</label>
         </div>
 
         <div>
-          <input type="radio" id="completed" name="status" value="Completed" />
+          <input type="radio" id="completed" name="status" [value]="BookStatus.Completed" [(ngModel)] = "newBook.status"/>
           <label for="completed">Completed</label>
         </div>
 
         <div>
-          <input type="radio" id="dnf" name="status" value="DidNotFinish" />
+          <input type="radio" id="dnf" name="status" [value]="BookStatus.DidNotFinish" [(ngModel)] = "newBook.status" />
           <label for="dnf">Did Not Finish</label>
         </div>
       </fieldset>

@@ -2,10 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { BookService } from "../services/book";
 import { Book, BookStatus } from "../models/book";
 import { DropDownComponent } from "../buttons/drop-down/drop-down";
+import { AddButtonComponent } from "../buttons/add-button/add-button";
 
 @Component({
   selector: 'app-books',
-  imports: [DropDownComponent],
+  imports: [DropDownComponent, AddButtonComponent],
   templateUrl: './book-info.html',
   styleUrl: './book-info.css'
 })
@@ -44,4 +45,11 @@ export class BooksComponent implements OnInit {
       book.status = event.status;
     }
   }
+
+  newBookAdded(book: Book){
+    this.books.push(book);
+  }
+
+
+  
 }
