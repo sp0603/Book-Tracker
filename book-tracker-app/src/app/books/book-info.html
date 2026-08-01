@@ -1,6 +1,4 @@
-<add-book-button>
-  (bookAdded) = "newBookAdded($event)"
-</add-book-button>
+<add-book-button> (bookAdded) = "newBookAdded($event)" </add-book-button>
 <!-- loop to display all the books that are added -->
 @for (book of books; track book.id) {
   <div class="book-information">
@@ -13,5 +11,6 @@
         (statusChanged)="onStatusChanged($event)"
       ></drop-drown-status>
     </p>
+    <delete-button [book]="book" (bookDeleted)="onBookDeleted($event)"> </delete-button>
   </div>
 }

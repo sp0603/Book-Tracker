@@ -28,6 +28,13 @@ export class BookService {
     return this.http.post<Book>(`${this.apiUrl}/`, book);
   }
 
+  deleteBook(id: number): Observable<Book> {
+    return this.http.delete<Book>(
+      `${this.apiUrl}/deletebook?id=${id}`,
+      {}
+    );
+  }
+
   // addBook(book: Book): Observable<Book> {
   //   return this.http.post<Book>(
   //     `${this.apiUrl}/`,

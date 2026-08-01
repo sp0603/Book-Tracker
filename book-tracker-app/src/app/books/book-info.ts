@@ -3,10 +3,10 @@ import { BookService } from "../services/book";
 import { Book, BookStatus } from "../models/book";
 import { DropDownComponent } from "../buttons/drop-down/drop-down";
 import { AddButtonComponent } from "../buttons/add-button/add-button";
-
+import { DeleteButtonComponent } from "../buttons/delete-button/delete-button";
 @Component({
   selector: 'app-books',
-  imports: [DropDownComponent, AddButtonComponent],
+  imports: [DropDownComponent, AddButtonComponent, DeleteButtonComponent],
   templateUrl: './book-info.html',
   styleUrl: './book-info.css'
 })
@@ -48,6 +48,10 @@ export class BooksComponent implements OnInit {
 
   newBookAdded(book: Book){
     this.books.push(book);
+  }
+
+  onBookDeleted(id: number){
+    this.books = this.books.filter(book => book.id !== id);
   }
 
 

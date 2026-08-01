@@ -3,6 +3,7 @@ import { BookService } from "../../services/book";
 import { FormsModule } from '@angular/forms';
 import { Book, BookStatus } from "../../models/book";
 import { Output, EventEmitter} from "@angular/core";
+import { DeleteButtonComponent } from "../delete-button/delete-button";
 
 @ Component({
     selector: 'add-book-button',
