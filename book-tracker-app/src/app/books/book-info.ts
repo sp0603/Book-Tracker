@@ -47,7 +47,7 @@ export class BooksComponent implements OnInit {
   }
 
   newBookAdded(book: Book){
-    this.books.push(book);
+    this.books = [...this.books, book];
   }
 
   onBookDeleted(id: number){
