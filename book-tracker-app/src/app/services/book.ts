@@ -34,11 +34,4 @@ export class BookService {
       {}
     );
   }
-
-  // addBook(book: Book): Observable<Book> {
-  //   return this.http.post<Book>(
-  //     `${this.apiUrl}/`,
-  //     {}
-  //   );
-  // }
 }
