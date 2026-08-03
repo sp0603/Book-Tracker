@@ -39,7 +39,7 @@ public class UnitTest1
     }
 
     [Fact]
-    public void GetStatusList()
+    public void GetStatusList_ShouldReturnWantToRead()
     {
         // arrange
         var service = new BookService();
@@ -48,7 +48,51 @@ public class UnitTest1
         var books = service.GetStatusList(BookStatus.WantToRead);
 
         // assert
+        Assert.NotEmpty(books);
         Assert.NotNull(books);
 
+    }
+
+    [Fact]
+
+    public void GetStatusList_ShouldNotReturnDidNotFinish()
+    {
+        // arrange
+        var service = new BookService();
+
+        // act
+        var books = service.GetStatusList(BookStatus.DidNotFinish);
+
+        // assert -> expecting an empty list of books for did not finish
+        Assert.Empty(books);
+        Assert.NotNull(books);
+    }
+
+    [Fact]
+    public void GetStatusList_ShouldReturnCompleted()
+    {
+        // arrange
+        var service = new BookService();
+
+        // act
+        var books = service.GetStatusList(BookStatus.Completed);
+
+        // assert
+        Assert.NotEmpty(books);
+        Assert.NotNull(books);
+    }
+
+    [Fact]
+    public void GetStatusList_ShouldReturnReading()
+    {
+        // arrange
+        var service = new BookService();
+
+        // act
+        var books = service.GetStatusList(BookStatus.Reading);
+
+        // assert
+        Assert.NotEmpty(books);
+        Assert.NotNull(books);
     }
 }
