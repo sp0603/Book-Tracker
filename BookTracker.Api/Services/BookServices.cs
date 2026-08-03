@@ -1,6 +1,4 @@
 using BookTracker.Api.Models;
-using Microsoft.AspNetCore.Mvc;
-using BookTracker.Api.Controllers;
 using System.Data;
 
 namespace BookTracker.Api.Services;
