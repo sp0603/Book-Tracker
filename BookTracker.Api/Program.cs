@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using BookTracker.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers()
 
 // Add services
 builder.Services.AddControllers();
+builder.Services.AddSingleton<BookService>();
 
 // Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
