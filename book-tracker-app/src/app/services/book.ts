@@ -8,8 +8,10 @@ import { Book } from '../models/book';
 })
 export class BookService {
 
+  // baseURL
   private apiUrl = 'http://localhost:5126/api/books';
 
+  // Connecting to the API
   constructor(private http: HttpClient) {}
 
   getBooks(): Observable<Book[]> {
