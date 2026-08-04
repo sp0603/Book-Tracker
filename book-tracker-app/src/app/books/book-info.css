@@ -6,3 +6,12 @@
     padding-bottom: 8px;
     padding-left: 8px;
 }
+
+.info-title {
+    font-family: 'Abril_FatFace';
+    font-size: 24px;
+}
+
+p {
+    font-family: 'Fira_Sans';
+}

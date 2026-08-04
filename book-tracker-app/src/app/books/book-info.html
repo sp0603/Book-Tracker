@@ -2,15 +2,10 @@
 <!-- loop to display all the books that are added -->
 @for (book of books; track book.id) {
   <div class="book-information">
-    <p>Title: {{ book.title }}</p>
+    <p class="info-title">{{ book.title }}</p>
     <p>Author: {{ book.author }}</p>
-    <p>
-      Status: {{ statusDisplay[book.status] }}
-      <drop-drown-status
-        [book]="book"
-        (statusChanged)="onStatusChanged($event)"
-      ></drop-drown-status>
-    </p>
-    <delete-button [book]="book" (bookDeleted)="onBookDeleted($event)"> </delete-button>
+    <p>Status: {{ statusDisplay[book.status] }}</p>
+    <drop-drown-status [book]="book" (statusChanged)="onStatusChanged($event)"></drop-drown-status
+    ><delete-button [book]="book" (bookDeleted)="onBookDeleted($event)"> </delete-button>
   </div>
 }
