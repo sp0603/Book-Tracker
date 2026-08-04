@@ -11,6 +11,8 @@ import { BookStatus } from "../../models/book";
 })
 
 export class DropDownComponent{
+    // Will always be non-null
+    
     @Input() book!: Book;
     @Output() statusChanged = new EventEmitter<{ id: number, status: BookStatus }>();
 

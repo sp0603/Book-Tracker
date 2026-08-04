@@ -12,13 +12,14 @@ import { BookService } from "../../services/book";
 })
 
 export class DeleteButtonComponent{
-
+    // Will always be non-null
     @Input() book!: Book;
-    // just need the id to remove the book
+    
     @Output() bookDeleted = new EventEmitter<number>();
 
     constructor (private bookService: BookService){}
 
+    // just need the id to remove the book
     deleteBook(id: number) {
         this.bookService.deleteBook(id).subscribe(() =>{
             this.bookDeleted.emit(id);

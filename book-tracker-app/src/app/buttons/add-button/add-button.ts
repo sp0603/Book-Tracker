@@ -3,7 +3,6 @@ import { BookService } from "../../services/book";
 import { FormsModule } from '@angular/forms';
 import { Book, BookStatus } from "../../models/book";
 import { Output, EventEmitter} from "@angular/core";
-import { DeleteButtonComponent } from "../delete-button/delete-button";
 
 @ Component({
     selector: 'add-book-button',
@@ -15,21 +14,18 @@ import { DeleteButtonComponent } from "../delete-button/delete-button";
 
 export class AddButtonComponent{
 
-    showPopUp(id: string): void {
+    // a general function that allows the form to hide or appear
+    // taking in the element id and displaytype as as a string
+    
+    popUpDisplay(id: string, displayType: string): void {
         const element = document.getElementById(id);
         if (element) {
-            element.style.display = 'block';
+            element.style.display = displayType;
         }
     }
 
-    hidePopUp(id: string): void {
-        const element = document.getElementById(id);
-        if (element) {
-            element.style.display = 'none';
-        }
-    }
-
-    // this is so that the parent changes and the new book is displayed without reloading
+    // this is so that the parent changes and the new book is displayed 
+    // without reloading
     // page
 
     @Output() newBookAdded = new EventEmitter<Book>();
@@ -59,7 +55,7 @@ export class AddButtonComponent{
                 status: BookStatus.WantToRead
             };
 
-            this.hidePopUp('popup')
+            this.popUpDisplay('popup', 'none')
         });
     }
 }
