@@ -73,7 +73,7 @@
 </style>
 
 
-<button (click)="showPopUp('popup')" class="general-add-button">Add Book</button>
+<button (click)="popUpDisplay('popup', 'block')" class="general-add-button">Add Book</button>
 
 <div class="popup" id="popup">
   <form class="pop-up-form" (ngSubmit)="addBook()">
@@ -122,7 +122,7 @@
 
     <div class="buttons">
       <button type="submit" class="submit-button">Add</button>
-      <button type="button" (click)="hidePopUp('popup')" class="close-button">X</button>
+      <button type="button" (click)="popUpDisplay('popup', 'none')" class="close-button">X</button>
     </div>
   </form>
 </div>
